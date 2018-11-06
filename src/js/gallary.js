@@ -1,4 +1,4 @@
-
+<script>
 function openModal() {
   document.getElementById('myModal').style.display = "block";
 }
@@ -50,3 +50,4 @@ function showSlides_uni(n) {
   }
   slides_uni[slideIndex_uni-1].style.display = "block";  
 }
+</script>
