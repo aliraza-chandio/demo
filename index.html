@@ -685,6 +685,7 @@ nav ul li:hover {
    
 <!--    Navbar script-->
 <script type="text/javascript">
+	if($ === undefined || $ === null) $ = jquery;
 $(".openNav").click(function() {
   $("body").toggleClass("navOpen");
   $("nav").toggleClass("open");
