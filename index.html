@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evelyn Template</title>
+    <link rel="stylesheet" href="src/scss/bootstrap.min.css">
+    <link rel="stylesheet" href="src/scss/gallary.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Serif:700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+   
+    
+</head>
+<style class="cp-pen-styles">* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #666666;
+  line-height: 1.5em;
+  position: relative;
+}
+.navOpen {
+  overflow: hidden;
+}
+.wrapper {
+  transition-duration: 0.5s;
+  transition-timing-function: swing;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+/*  padding: 100px 40px;*/
+}
+.wrapper.open {
+  transform: translateX(250px) translateY(50px);
+  -webkit-transform: translateX(250px) translateY(50px);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
+.wrapper section {
+  max-width:  100%;
+  margin: 0 auto;
+}
+.wrapper section h1 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.wrapper section h2 {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.wrapper section p {
+  margin-bottom: 40px;
+}
+.openNav {
+  transition-duration: 0.5s;
+  transition-timing-function: swing;
+  width: 50px;
+  height: 50px;
+  background-color: #58B8C8;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
+}
+.openNav:hover {
+  cursor: pointer;
+}
+.openNav .icon {
+  transition-duration: 0.2s;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  top: 24px;
+  left: 10px;
+}
+.openNav .icon:before,
+.openNav .icon:after {
+  transition-duration: 0.5s;
+  background-color: white;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 2px;
+  left: 0px;
+}
+.openNav .icon:before {
+  top: -7px;
+}
+.openNav .icon:after {
+  top: 7px;
+}
+.openNav.open {
+  transform: translateX(250px) translateY(50px);
+  -webkit-transform: translateX(250px) translateY(50px);
+}
+.openNav.open .icon {
+  background-color: transparent;
+}
+.openNav.open .icon:before,
+.openNav.open .icon:after {
+  top: 0;
+}
+.openNav.open .icon:before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.openNav.open .icon:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+nav {
+/*  background-color: #14B9FF;*/
+	background-image: linear-gradient(-90deg, rgb(21,103,149), rgb(8,164,160));
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+nav ul {
+  width: 250px;
+  margin-top: 50px;
+}
+nav ul:hover li {
+  color: rgba(255, 255, 255, 0.5);
+}
+nav ul li {
+  transition-duration: 0.25s;
+  display: block;
+  padding: 5px 40px;
+  color: white;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+nav ul li:hover {
+  cursor: pointer;
+  color: white;
+}
+	@media only screen and (max-width: 600px) {
+		
+		#list_design li{
+			  display: block; 
+           border-radius: 100%;
+            margin: 0% 15% 0 15%;
+            background-color: rgb(8,164,160);
+		}
+		#list_design li i{
+			font-size: 40px;
+			padding-left: 35%;
+
+		}
+	}
+	@media only screen and (max-width: 768px) {
+	.img_edit{
+		height: 50%;
+		width: 50%;
+		margin-left: 25%;
+		margin-top: 30%;
+	}
+	
+	}
+	@media only screen and (max-width: 1024px) {
+	.img_edit{
+		height: 50%;
+		width: 50%;
+		margin-left: 25%;
+		margin-top: 30%;
+	}
+	}
+	
+	#list_design li{
+          display: block; 
+           border-radius: 100%;
+            padding: 5%;
+            background-color: rgb(8,164,160);
+           }
+	a{
+		text-decoration: none;
+	}
+	
+</style>
+<body class="is-boxed has-animations">
+   
+   
+   	<nav>
+             <ul>
+               <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#project">Projects</a>
+                        </li>                      
+                        <li>
+                            <a href="#certificate">Certificates </a>
+                        </li>
+                        <li>
+                            <a href="#expertise">My Expertise</a>
+                        </li>    
+  </ul>
+</nav>
+	<div class="openNav">
+  <div class="icon"></div>
+</div>
+   
+   
+    <div class="body-wrap boxed-container wrapper">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Evelyn</title>
+                                    <defs>
+                                        <radialGradient cy="0%" fx="50%" fy="0%" r="100%" id="logo-gradient">
+                                            <stop stop-color="#FFF" offset="0%"/>
+                                            <stop stop-color="#FFF" stop-opacity=".24" offset="100%"/>
+                                        </radialGradient>
+                                    </defs>
+                                    <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm0-10a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" fill="url(#logo-gradient)" fill-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <main>
+<!--           intro-->
+            <section class="hero text-light text-center" id="home">
+                <div class="container-sm">
+                    <div class="hero-inner">
+                        <h1 class="hero-title h2-mobile mt-0 is-revealing">Welcome to the site of Nehal</h1>
+                        <p class="hero-paragraph is-revealing">I'M <b style="color: white">C</b>oder, <b style="color: white">W</b>eb Designer,  <b style="color: white">W</b>eb Developer, <b style="color: white">G</b>raphics Desinger.</p>
+                       
+                       <div class="hero-media"  >
+                        <div class="row" >
+                        	<div class="col-lg-4 col-lg-offset-4">
+                        		<img src="Screenshot (1).png" height="200" width="200"  class="img img-circle img_edit" style="margin-top: -50px">
+                        	</div>
+                        </div>
+                          
+                        <p style="color: darkslategrey;">I am a student of Software Engineering in Karachi University, </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!--nav-->
+            <section class="clients section" >
+                <div class="container">
+                    <div class="clients-inner section-inner has-top-divider">
+                        <div class="container-sm" >
+                            <ul class="list-reset mb-0" id="list_design">
+                            <li>
+								 <a href="#project" ><i class="fa fa-lightbulb-o" style="font-size:80px; color: white"></i></a>
+                             </i>                                                         
+                                <li>
+                                 <a href="#certificate"><i class="fa fa-certificate" style="font-size:80px;color: white"></i> </a>
+                                </li>
+                                <li>
+                                 <a href="#expertise"><i class="fa fa-database" style="font-size:80px;color: white"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!--Project-->
+            <section class="features section text-center" id="project" >
+                <div class="container">
+                    <div class="features-inner section-inner has-top-divider">
+                        <h2 class="section-title mt-0" >My Projects</h2>
+                        <div class="features-wrap">
+                            <div class="feature is-revealing">
+                               <a href="../../../Desktop/stegoGA2.mp4" >
+                                <div class="feature-inner">
+                           <h3 class="feature-title h3-mobile" >Image Steganography</h3>
+                                    <p style="font-size: 15px">A Genetic Algorithm concept is implemented in image steganography project.</p>
+                                </div>
+                                </a>
+                            </div>
+                            <div class="feature is-revealing">
+						<a onClick="error()">
+                                <div class="feature-inner">
+                           <h3 class="feature-title h3-mobile" >Pacman Game</h3>
+                                    <p style="font-size: 15px">Pacman game  is my university project, where I've developed this game using assembly language.</p>
+                                </div>
+                                </a>
+							</div>
+                            <div class="feature is-revealing">
+                              <a onClick="error()">
+                                <div class="feature-inner">                                  
+                                    <h3 class="feature-title h3-mobile">C# Compiler</h3>
+                                    <p class="text-sm">I have developed a C# compiler using C# language</p>
+                                </div>
+								</a>
+                            </div>
+                            <div class="feature is-revealing">
+                               <a href="project_mng.html" > 
+                                <div class="feature-inner">                                   
+                                    <h3 class="feature-title h3-mobile">Project Management</h3>
+                                    <p class="text-sm">I've manage a project using Visual Studio Team <Service class=""></Service></p>
+                                </div>
+								</a>
+                            </div>
+                              <div class="feature is-revealing">
+                               <a href="banquet.html" > 
+                                <div class="feature-inner">                                   
+                                    <h3 class="feature-title h3-mobile">Online Banquet Booking</h3>
+                                    <p class="text-sm">I've manage a project using Visual Studio Team <Service class=""></Service></p>
+                                </div>
+								</a>
+                            </div>
+                             <div class="feature is-revealing">
+                               <a href="shopping.html" > 
+                                <div class="feature-inner">                                   
+                                    <h3 class="feature-title h3-mobile">Online Shopping</h3>
+                                    <p class="text-sm">I've manage a project using Visual Studio Team <Service class=""></Service></p>
+                                </div>
+								</a>
+                            </div>
+                             <div class="feature is-revealing">
+                               <a onClick="error()" > 
+                                <div class="feature-inner">                                   
+                                    <h3 class="feature-title h3-mobile">Freelancing Projects</h3>
+                                    <p class="text-sm">I've manage a project using Visual Studio Team <Service class=""></Service></p>
+                                </div>
+								</a>
+                            </div>
+                             <div class="feature is-revealing">
+                               <a href="fyp.html" > 
+                                <div class="feature-inner">                                   
+                                    <h3 class="feature-title h3-mobile">Final Year Project</h3>
+                                    <p class="text-sm">I've manage a project using Visual Studio Team <Service class=""></Service></p>
+                                </div>
+								</a>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!--certificate section not done yet-->
+            <section class="features-extended section" id="certificate">
+                <div class="container">
+                    <div class="features-extended-inner section-inner has-top-divider">
+                        <div class="features-extended-header text-center">
+                            <div class="container-sm">
+                                <h2 class="section-title mt-0" >Certificates / Perorma</h2> 
+                            </div>
+                        </div>
+                        <div class="feature-extended">
+                            <div class="feature-extended-image is-revealing">
+                            <a href="Images/IMG_20181106_172020712.jpg" target="_blank"><img src="Images/IMG_20181106_172020712.jpg" ></a>
+                            </div>
+                            <div class="feature-extended-body">
+                                <h3 class="mt-0">Metric</h3>
+                                <p>I've passed my metric from Green House Grammar Heigher Secondary School with %</p>
+                            </div>
+                        </div>
+                       
+                        <div class="feature-extended">
+                            <div class="feature-extended-image is-revealing">
+                          	 <a href="Images/IMG_20181106_172140279.jpg" target="_blank"><img src="Images/IMG_20181106_172140279.jpg" ></a>
+                            </div>
+                            <div class="feature-extended-body">
+                                <h3 class="mt-0">Inetmediate</h3>
+                                <p>I've passed my intermediate from Gov. Degree College Malir Cantt with 79.27%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-extended">
+                            <div class="feature-extended-image is-revealing">
+                            <a href="Images/IMG_20181106_172802882.jpg" target="_blank"><img src="Images/IMG_20181106_172802882.jpg" ></a>
+                            </div>
+                            <div class="feature-extended-body">
+                                <h3 class="mt-0">Courses</h3>
+                                <p>I've done <b>P</b>hp & <B>M</B>ySQL course from Aptech</p>
+                            </div>
+                        </div>
+                        <div class="feature-extended">
+                            <div class="feature-extended-image is-revealing">
+<!--                            <a href="certificate/competition"><img src="Images/IMG_20181106_172741595.jpg" ></a>-->
+                           <img src="Images/IMG_20181106_172741595.jpg"   style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                            </div>
+                            <div class="feature-extended-body">
+                                <h3 class="mt-0">Competition</h3>
+                                <p>I've participated in many competitions. Since i didn't win but I learn some frameworks like <b>L</b>aravel <b>C</b>odeignitor </p>
+                            </div>
+                        </div>
+                        <div class="feature-extended">
+                            <div class="feature-extended-image is-revealing">
+                            <img src="Images/1.jpg"   style="width:100%" onclick="openModal_uni();currentSlide(1)" class="hover-shadow cursor">
+                            </div>
+                            <div class="feature-extended-body">
+                                <h3 class="mt-0">University</h3>
+                                <p>I'm studing Bacholars in University of Karachi with major Software Engineering, and this is my last semester of my bacholars program. <br> I've my four performas and an attested copy of my 5th Semester Result </p>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+                
+                
+<!--  MODEL  certificate              -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">	     
+      <img src="Images/IMG_20181106_172850242.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">	     
+      <img src="Images/IMG_20181106_172839278.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">	     
+      <img src="Images/IMG_20181106_172814851.jpg" style="width:100%">
+    </div>
+    
+   
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+  </div>
+</div>
+
+<!--                MODEL UNI-->
+                <div id="myModal_uni" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides_uni">	     
+      <img src="Images/1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides_uni">	     
+      <img src="Images/2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides_uni">	     
+      <img src="Images/3.jpg" style="width:100%">
+    </div>
+     <div class="mySlides_uni">	     
+      <img src="Images/4.jpg" style="width:100%">
+    </div>
+     <div class="mySlides_uni">	     
+      <img src="Images/5.jpg" style="width:100%">
+    </div>
+   
+    
+    <a class="prev" onclick="plusSlides_uni(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides_uni(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+  </div>
+</div>
+
+                
+                
+                
+            </section>
+            
+<!--    		EXPERTISE 	-->
+            <section class="pricing section" id="expertise">
+                <div class="container">
+                    <div class="pricing-inner section-inner has-top-divider">
+                        <h2 class="section-title mt-0 text-center" >My Expertise</h2>
+                        <div class="row">
+                        <div class="col-lg-3">
+                        		 <img src="Images/flat,1000x1000,075,f.u4.jpg" class="img-responsive" height="150" width="150">
+                        	</div>
+                        	<div class="col-lg-3">
+                        		<img src="Images/1200px-HTML5_logo_and_wordmark.svg.png" class="img-responsive" height="150" width="150">
+                        	</div>
+                        	   <div class="col-lg-3">
+                        		 <img src="Images/web-js.png" class="img-responsive" height="150" width="150">
+                        	</div>
+                        	<div class="col-lg-3">
+                        		 <img src="Images/25158.png" class="img-responsive" height="150" width="150">
+                        	</div>                        	
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-3">
+                        		 <img src="Images/1200px-MySQL.svg.png" class="img-responsive" height="200" width="200">
+                        	</div>
+                        	<div class="col-lg-3">
+                        		 <img src="Images/laravel-logo.png" class="img-responsive" height="500" width="500">
+                        	</div>
+                        	<div class="col-lg-3">
+                        		 <img src="Images/codeigniter.png" class="img-responsive" height="150" width="150">
+                        	</div>
+                        	<div class="col-lg-3">
+                        		 <img src="Images/1200px-Java_programming_language_logo.svg.png" class="img-responsive" height="100" width="100">
+                        	</div>
+                        </div>
+                        
+                       
+                       
+<!--
+                        <div class="pricing-tables-wrap">
+                            <div class="pricing-table is-revealing">
+                                <div class="pricing-table-inner">
+                                    <div class="pricing-table-main">
+                                        <div class="pricing-table-header">
+                                            <div class="pricing-table-title mt-12 mb-16 text-secondary">Lorem ipsum</div>
+                                            <div class="pricing-table-price mb-24 pb-32"><span class="pricing-table-price-currency h3">$</span><span class="pricing-table-price-amount h1">29</span></div>
+                                        </div>
+                                        <ul class="pricing-table-features list-reset text-xs mb-56">
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00C6A7" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00C6A7" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00C6A7" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-table-cta">
+                                        <a class="button button-secondary button-block" href="#">Get started now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pricing-table is-revealing">
+                                <div class="pricing-table-inner">
+                                    <div class="pricing-table-main">
+                                        <div class="pricing-table-header">
+                                            <div class="pricing-table-title mt-12 mb-16 text-primary">Lorem ipsum</div>
+                                            <div class="pricing-table-price mb-24 pb-32"><span class="pricing-table-price-currency h3">$</span><span class="pricing-table-price-amount h1">129</span></div>
+                                        </div>
+                                        <ul class="pricing-table-features list-reset text-xs mb-56">
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00A2B8" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00A2B8" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00A2B8" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-icon">
+                                                    <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M14.3.3L5 9.6 1.7 6.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4 4c.2.2.4.3.7.3.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0z" fill="#00A2B8" fill-rule="nonzero"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Sed do eiusmod tempor cesa.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing-table-cta">
+                                        <a class="button button-primary button-block" href="#">Get started now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+-->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+                        <a href="#">
+                            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <title>Evelyn</title>
+                                <defs>
+                                    <radialGradient cy="0%" fx="50%" fy="0%" r="100%" id="logo-gradient-footer">
+                                        <stop stop-color="#00A2B8" offset="0%"/>
+                                        <stop stop-color="#00F9D2" offset="100%"/>
+                                    </radialGradient>
+                                </defs>
+                                <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm0-10a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" fill="url(#logo-gradient-footer)" fill-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQ's</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Facebook</span>
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z" fill="#0EB3CE"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Twitter</span>
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z" fill="#0EB3CE"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="screen-reader-text">Google</span>
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" fill="#0EB3CE"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer-copyright">&copy; 2018 Evelyn, all rights reserved</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+<!--    ERROR SCRIPT-->
+   <script>
+	function error(){
+		alert("Sorry guyz, i don't remember where I save my project :( \n I'll try to find this project and upload a video soon");
+	}
+	</script> 
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--    Navbar script-->
+<script>
+$(".openNav").click(function() {
+  $("body").toggleClass("navOpen");
+  $("nav").toggleClass("open");
+  $(".wrapper").toggleClass("open");
+  $(this).toggleClass("open");
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <script src="dist/js/main.min.js"></script>
+ <script src="src/js/gallary.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+
+</body>
+</html>
