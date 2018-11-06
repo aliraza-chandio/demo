@@ -1,10 +1,10 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nehal Ayub</title>
+    <title>Evelyn Template</title>
     <link rel="stylesheet" href="src/scss/bootstrap.min.css">
     <link rel="stylesheet" href="src/scss/gallary.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -682,8 +682,16 @@ nav ul li:hover {
 		alert("Sorry guyz, i don't remember where I save my project :( \n I'll try to find this project and upload a video soon");
 	}
 	</script> 
-
-
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--    Navbar script-->
+<script>
+$(".openNav").click(function() {
+  $("body").toggleClass("navOpen");
+  $("nav").toggleClass("open");
+  $(".wrapper").toggleClass("open");
+  $(this).toggleClass("open");
+});
+</script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -700,25 +708,7 @@ nav ul li:hover {
 </script>
     <script src="dist/js/main.min.js"></script>
  <script src="src/js/gallary.js"></script>
-  <!--  <script src="src/js/jquery.min.js"></script>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-	-->
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <!--    Navbar script-->
-<script type="text/javascript">
-	
-$(".openNav").click(function() {
-  $("body").toggleClass("navOpen");
-  $("nav").toggleClass("open");
-  $(".wrapper").toggleClass("open");
-  $(this).toggleClass("open");
-});
-</script>
-	
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="src/js/bootstrap.min.js"></script>
 
 </body>
