@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nehal</title>
+    <link rel="stylesheet" href="bootstrap.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+   
+	 <style>
+		 body{
+			font-family: 'Poiret One', cursive;
+		 	color: white;	
+		 }
+    	.main-div{
+			height: 100vh;
+		    background: 
+		    linear-gradient(to top right, rgb(7, 180, 238) 50%, transparent 50%),
+		    linear-gradient(to bottom right, #1f7bd7 50%, transparent 50%);    		  
+    	}
+    	.curtain{
+    		height: 100%;
+		    width: 100%;
+		    background: white;
+		    position: absolute;
+		    z-index: 1;
+		    top: 0;
+    	}
+    	.first_text, .scnd_text, .status{
+    		position: absolute;  
+    		/*font-family: 'Poiret One', cursive;*/
+    		font-weight: bolder;
+    		/*color: white;*/
+    	}
+    	.first_text{
+    		left: 10%;  		
+    		top: -99px;
+    		font-size: 25px;
+    	}
+    	.scnd_text{
+    		left: 10%;  		
+    		top: -99px;
+    		font-size: 25px;
+    	}
+    	.status{
+    		left: 40%;
+    		top: -99px;
+    	}
+    	.image_{
+    		position: absolute;
+    		top: 0;
+    		left: -999px;
+    		border-radius: 50%;
+    		height: 20%;
+    	}			
+		.btn1, .btn2, .btn3{
+			position: absolute;
+			display: none;
+			background: #1f7bd7;
+			border: 1px solid #07b4ee;
+			color: white;
+			padding: 17px 45px;
+			font-size: 22px;
+			font-family: 'Poiret One', cursive;
+			font-weight: bold;
+			right: 2%;
+		}
+		.btn1{
+			top: 30%;
+		}
+		.btn2{
+			top: 40%;
+		}
+		.btn3{
+			top: 50%;
+		}
+		.page_two{
+			top: 0;
+			right: -80px;
+			position: absolute;
+			overflow: hidden;
+		}
+		.qualification-div{
+			height: 100vh;
+			background: 
+			linear-gradient(to top left, #1f7bd7 50%, transparent 50%),
+			linear-gradient(to bottom right, rgb(7, 180, 238) 50%, transparent 50%); 
+		}
+		.backarrow, .backarrow_project, .backarrow_expert{
+			position: absolute;
+			color: white;
+			font-size: 3.0em;
+			display: none;
+		}
+		.backarrow{
+			top: 2%;
+			left: 2%;			
+		}		
+
+		/*MOdal css*/
+		.modal {
+		  display: none;
+		  position: fixed;
+		  z-index: 1;
+		  padding-top: 100px;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  overflow: auto;
+		  background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  position: relative;
+		  background-color: rgba(0, 0, 0, 0);
+		  margin: auto;
+		  padding: 0;
+		  width: 90%;
+		  max-width: 1200px;
+		  border: none;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: white;
+		  position: absolute;
+		  top: 10px;
+		  right: 25px;
+		  font-size: 35px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #999;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+
+		.mySlides {
+		  display: none;
+		}
+
+		.cursor {
+		  cursor: pointer;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 50%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -50px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 20px;
+		  transition: 0.6s ease;
+		  border-radius: 0 3px 3px 0;
+		  user-select: none;
+		  -webkit-user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+		  right: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+		  background-color: rgba(0, 0, 0, 0.8);
+		}		
+
+		img {
+		  margin-bottom: -4px;
+		}
+
+		.caption-container {
+		  text-align: center;
+		  background-color: black;
+		  padding: 2px 16px;
+		  color: white;
+		}
+
+		.demo {
+		  opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+		  opacity: 1;
+		}
+
+		img.hover-shadow {
+		  transition: 0.3s;
+		}
+
+		.hover-shadow:hover {
+		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.page_three{
+			top: 0;
+			left: -80px;
+			position: absolute;
+			overflow: hidden;
+		}
+		.project-div{
+			height: 100vh;
+			background: linear-gradient(to top, #1f7bd7 50%, transparent 50%), linear-gradient(to bottom, rgb(7, 180, 238) 50%, transparent 50%);
+		}
+		/*.expert-div{
+			height: 100vh;
+			background: linear-gradient(to left, #1f7bd7 50%, transparent 50%), linear-gradient(to bottom, rgb(7, 180, 238) 50%, transparent 50%);
+		}*/
+		.backarrow_project{
+			top: 0;
+			right: 5%;
+			z-index: 1;
+		}		
+		img:not(.img_, .modalimg){
+			width: 200px;
+    		height: 200px;
+			border-radius: 50%;
+		}
+		.row_icon1{
+			border: 1px solid white;
+		    border-radius: 50%;
+		    text-align: center;
+		    font-size: 7em;
+		}
+		.first_row:hover, a.hover_effect:hover, .backarrow, .backarrow_project, .backarrow_expert{
+			cursor: pointer;
+		}
+		.first_row{
+			position: absolute;
+			top: -100%;
+			left: 10%;
+			color: white;			
+		}		
+		.scnd_row{
+			position: absolute;
+			top: -100%;
+			left: 10%;
+			color: white;			
+		}
+		.thrd_row{
+			position: absolute;
+			bottom: -100%;
+			right: 10%;
+			color: white;
+		}
+		.forth_row{
+			position: absolute;
+			bottom: -100%;
+			right: 10%;
+			color: white;
+		}
+		.project_div{
+			/*height: 100vh;*/
+			position: absolute; 
+			top: 0;
+			color: white;
+		}
+		.project1{
+			position: relative;
+			top: 10%;	
+		}
+		.project2{
+			position: relative;
+			top: 20%;
+		}
+		.project3{
+			position: relative;
+			top: 30%;
+		}
+		.top_margin{
+			margin-top: 5%;
+		}	
+		.page_foure{
+			position: absolute;
+			top: 0;
+			overflow: hidden;			
+			/*height: 100vh;*/
+		}		
+		.expert_div{
+			height: 100vh;
+			margin: 0 auto;
+		}	
+		.expert1{
+			position: absolute;
+			top: -100%;
+			width: 50vw;
+		}
+		.expert2{
+			position: absolute;			
+			width: 50vw;
+			bottom: -100%;			
+		}
+		.backarrow_expert{
+			position: absolute;
+			top: 0;
+			right: 2%;
+			z-index: 1;
+		}
+		img.img_{
+			height: 200px;
+			width: 200px;
+			position: absolute;
+		}
+		.css{
+			left: 15%;
+			top: 15%;
+		}
+		.html{
+			left: 15%;
+			top: 35%;
+		}
+		.js{
+			left: 15%;
+			top: 55%;
+		}
+		.jquery{
+			left: 15%;
+			top: 75%;
+		}
+		.php{
+			left: 45%;
+			top: 15%;
+		}
+		.mysql{
+			left: 45%;
+			top: 35%;
+		}
+		.laravel{
+			left: 45%;
+			top: 55%;
+		}
+		.java{
+			left: 45%;
+			top: 75%;
+		}
+		.heading{
+			text-align: center; font-weight: bolder; margin-top: 5%; 
+		}
+		.playvideo:hover{
+			cursor: pointer;
+			font-weight: bold;
+		}
+		.img_size{
+			height: 200px;
+			width: 250px;
+		}
+    </style>
+</head>
+<body>
+
+	<div class="page_one" style="padding: 0; position: relative; overflow: hidden;">
+		<div class="curtain"></div>
+		<div class="main-div"></div>
+		<img class="image_ img-rounded" src="image.jpg" alt="">
+		<p class="first_text">Welcome to my site. Hi, I'm NEHAL</p>
+		<p class="scnd_text">A Coder, Web Designer, Web Developer, Graphics Desinger.</p>
+		<div class="status">
+			<h1 style="font-weight: bold;">Current Status</h1>
+			<p style="font-weight: bold;font-size: 18px;">I'm currently working in <a href="https://www.pksol.com/" class="hover_effect" style="color: #07b4ee;">PKSOL</a> as a Backend Developer</p>			
+		</div>
+		<button class="btn1"><i class='fas fa-graduation-cap'></i> &nbsp;&nbsp;&nbsp;Qualification</button>
+		<button class="btn2"><i class="fa fa-tasks" ></i>&nbsp;&nbsp;&nbsp;University Projects</button>
+		<button class="btn3"><i class="fa fa-star" ></i>&nbsp;&nbsp;&nbsp;My Expertise & Experience</button>		
+	</div>
+	<div class="page_two">
+		<div class="qualification-div"></div>
+		<i class="fa fa-arrow-left backarrow"></i>
+		<div class="row first_row">
+			<div class="col-sm-3 row_icon1">
+				<i class="fas fa-school"></i>
+			</div>
+			<div class="col-sm-4 playvideo" onclick="openModal();currentSlide(1)">
+				<h1>Metric</h1>
+				<p style="">I've passed my metric from Green House Grammar Heigher Secondary School with 80%.</p>			
+			</div>
+		</div>
+		<div class="row scnd_row">
+			<div class="col-sm-3 row_icon1">
+				<i class="fas fa-building"></i>
+			</div>
+			<div class="col-sm-4 playvideo" onclick="openModal();currentSlide(2)">
+				<h1>Inetmediate</h1>
+				<p style="">I've passed my intermediate from Gov. Degree College Malir Cantt with 79.27%.</p>			
+			</div>
+		</div>
+		<div class="row thrd_row">
+			<div class="col-sm-4 offset-md-5 playvideo" onclick="openModal();currentSlide(3)">
+				<h1>Courses</h1>
+				<p style="">I've done Php & MySQL course from Aptech located at Star Gate Metro Karachi.</p>			
+			</div>
+			<div class="col-sm-3 row_icon1">
+				<i class="fas fa-book"></i>
+			</div>
+		</div>
+		<div class="row forth_row">
+			<div class="col-sm-4 offset-md-5">
+				<h1>University</h1>
+				<p style="">I've completed my Bacholars program in Software Engineering from University of Karachi in 2018.</p>			
+			</div>
+			<div class="col-sm-3 row_icon1" style="width: 50px;">
+				<i class="fas fa-university"></i>
+			</div>
+		</div>				
+			
+	</div>	
+	<div class="page_three">
+		<div class="project-div"></div>	
+		<div class="row project_div">
+			<i class="fa fa-arrow-right backarrow_project"></i>
+			<div class="col-sm-6" style="margin-top: 5%;">
+				<div class="row project1 float1" style="left: -200%">
+					<div class="col-sm-4">
+						<img src="stegno.jpg" alt="" class="img_size">						
+					</div>
+					<div class="col-sm-4">						
+						<h2>Image Steganography</h2>
+						<p style="">A Genetic Algorithm concept is implemented in image steganography project. <span onclick="openVideoModal('steganography');" class="playvideo">Click Here</span></p>																
+					</div>
+				</div>
+				<div class="row project2 float2" style="left: -200%">
+					<div class="col-sm-4">
+						<img src="c.png" alt="" class="img_size">						
+					</div>
+					<div class="col-sm-4 top_margin">
+						<h2>C# Compiler</h2>
+						<p style="">I have developed a C# compiler using C# language. <span onclick="openVideoModal('compiler');" class="playvideo">Click Here</span></p>									
+					</div>
+				</div>
+				<div class="row project3 float3" style="left: -200%">
+					<div class="col-sm-4">
+						<img src="management.jpg" alt="" class="img_size">						
+					</div>
+					<div class="col-sm-4 top_margin">
+						<h2>Project Management</h2>
+						<p style="">I've manage a project using Visual Studio Team.</p>									
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6" style="margin-top: 5%;">
+				<div class="row project1 float4" style="right: -200%;">
+					<div class="col-sm-4 offset-sm-5">
+						<h2>Online Banquet Booking</h2>
+						<p style="font-size: 15px">This is my university project that I've designed it using <b>H</b>tml5, <b>C</b>SS3, <b>J</b>ava<b>S</b>cript,  <b>P</b>hp &amp; <b>M</b>y<b>S</b>QL. <service class=""></service><br>
+							<a href="https://royalpalace5.000webhostapp.com/" target="_blank" style="color: white;text-decoration: none;" class="playvideo"><b>Click Here</b>(Php&MySQL)</a><br>
+							<a href="https://moviemusicfun.000webhostapp.com/" target="_blank" style="color: white;text-decoration: none;" class="playvideo"><b>Click Here</b>(Wordpress)</a>
+						</p>									
+					</div>
+					<div class="col-sm-3">
+						<img src="banquet.jpg" alt="" class="img_size">						
+					</div>
+				</div>
+				<div class="row project2 float5" style="right: -200%;">
+					<div class="col-sm-4 offset-sm-5 top_margin">
+						<h2 class="playvideo">Online Shopping</h2>												
+						<p style="font-size: 15px">I've design Online shopping site using <b>L</b>aravel &amp; <b>W</b>ordpress. <a href="http://letshopping.000webhostapp.com/" target="_blank" style="color: white;text-decoration: none;" class="playvideo">Click Here</a></p>									
+					</div>
+					<div class="col-sm-3">
+						<img src="shop.jpg" alt="" class="img_size">						
+					</div>
+				</div>
+				<div class="row project3 float6" style="right: -200%;">
+					<div class="col-sm-4 offset-sm-5 top_margin">
+						<h2>Pacman Game</h2>
+						<p style="">Pacman game  is my university project, where I've developed this game using assembly language. <span onclick="openVideoModal('pacman');" class="playvideo">Click Here</span></p>									
+					</div>
+					<div class="col-sm-3">
+						<img src="pacman.jpg" alt="" class="img_size">						
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div class="page_foure">
+		<div class="row expert_div">
+			<i class="fa fa-arrow-right backarrow_expert"></i>
+
+			<div class="cols-sm-6 expert1" style="background: #1f7bd7;">
+				<h3 class="heading">Expertise</h3>				
+				<img class="img_ css" src="css.png" alt="">					
+				<img class="img_ html" src="html.png" alt="">
+				<img class="img_ js" src="js.png" alt="">
+				<img class="img_ jquery" src="jquery.jpg" alt="">
+				<img class="img_ php" src="php.png" alt="">
+				<img class="img_ mysql" src="mysql.png" alt="">
+				<img class="img_ laravel" src="laravel.png" alt="">
+				<img class="img_ java" src="java.png" alt="">
+			</div>
+			<div class="cols-sm-6 expert2" style="background: rgb(7, 180, 238);">
+				<h3 class="heading">Experience</h3>	
+				<p style="text-align: center; font-weight: bolder;position: absolute;top: 10%;padding: 10%;">
+					I started my career in web development by making websites for clients on
+					freelancing portals. I have astounding success and continue
+					to work as a freelancer in my free time. I have happy clients all over. I've done  developing & designing sites, creating traditional pages like Home, About, Contact. I've got 1 year experience of freelancing projects.				
+					<br><br>
+					Now i'm doing job at <a href="https://www.pksol.com/" class="hover_effect" style="color: #2b17c1;">PKSOL</a> as a <b>Frontend</b> & <b>Backend</b> Developer. 						
+					<br><br>
+					<span style="font-size: 24px;">Why me?</span><br>
+					I am good at understanding
+					requirements and communicating with
+					clients both foreign and local. I have
+					instincts for developing websites and
+					softwares and overcoming technical
+					barriers. Fast Learner & Excellent
+					Implementer!
+				</p>			
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="videoModal" class="modal">
+	  <span class="close cursor" onclick="closeModal()">&times;</span>
+	  <div class="modal-content">
+	  	<video style="height: 80vh;" id="myVideo" controls="controls">
+	  	  <source src="" type="video/mp4">	  	    
+	  	</video>
+	  </div>
+	</div>
+
+
+
+	<div id="myModal" class="modal">
+	  <span class="close cursor" onclick="closeModal()">&times;</span>
+	  <div class="modal-content">
+
+	    <div class="mySlides" style="margin: 0 auto;">
+	      <img class="modalimg" src="metric.jpg" style="height: 80vh;">
+	    </div>
+
+	    <div class="mySlides" style="margin: 0 auto;">
+	      <img class="modalimg" src="inter.jpg" style="height: 80vh;">
+	    </div>
+
+	    <div class="mySlides" style="margin: 0 auto;">
+	      <img class="modalimg" src="course.jpg" style="height: 80vh;">
+	    </div>	    
+	    
+	    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+	  </div>
+	</div>
+
+
+
+
+
+
+
+
+
+</body>
+    <script src="jquery.js"></script>
+     <script>
+    	jQuery(document).ready(function($) {
+    		setTimeout(function(){
+    		    $(".curtain").animate({
+    		    	top: '100vh',
+    		    	zIndex: 1,
+    		    	height: '0'
+    		    }, 1000, function() {
+    		    	$('.first_text').animate({
+    		    		top: "65%"
+    		    	}, 1000);
+    		    	$('.scnd_text').animate({
+    		    		top: "70%"
+    		    	}, 1000);
+    		    	$('.image_').animate({
+    		    		top: "40%",
+    		    		left: "10%"
+    		    	}, 1000);
+    		    	$('.status').animate({
+    		    		top: "10%"
+    		    	}, 1000);
+    		    	$('.btn1').fadeIn(1000);
+    		    	$('.btn2').fadeIn(2000);
+    		    	$('.btn3').fadeIn(3000);
+    		    });
+    		  
+    		}, 1000);
+
+    		$(document).on('click', '.btn1', function(event) {
+    			$('.page_one').animate({
+    				left: "-100%"
+    			}, 1000);
+				$('.page_two').css('right', '0').animate({
+					left: "0px"
+				}, 1000, function(){
+					$('.backarrow').fadeIn(2000);
+					$('.first_row').animate({
+						top: '10%'
+					}, 300);								
+					$('.scnd_row').animate({
+						top: '40%'
+					}, 300);
+					$('.thrd_row').animate({
+						bottom: '30%'
+					}, 300);
+					$('.forth_row').animate({
+						bottom: '10%'
+					}, 300);
+				});
+    			
+    		});    		
+
+    		$(document).on('click', '.backarrow', function(event) {
+				$('.page_two').animate({					
+					left : "100%"
+				}, 1000);
+				$('.backarrow').fadeOut(2000);
+				$('.first_row, .scnd_row').animate({
+					top: '-100%'
+				}, 300);
+				$('.thrd_row, .forth_row').animate({
+					bottom: '-100%'
+				}, 300);
+    			$('.page_one').animate({
+    				left: "0px"
+    			}, 1000);
+    		});
+
+    		$(document).on('click', '.btn2', function(event) {    			
+				$('.page_three').css('left', '0').animate({
+					right: "0"
+				}, 1000, function(){
+					$('.backarrow_project').fadeIn(500);	
+					$('.float1, .float2, .float3').animate({
+						left: "5%"
+					}, 500)	
+					$('.float4, .float5, .float6').animate({
+						right: "15%"
+					}, 500)										
+				});				
+
+				$(window).resize(function() {
+				  if (window.innerWidth <= 1024) {
+				  	$('.float1 div.col-sm-4').removeClass('col-sm-4').addClass('col-sm-5')
+				  	$('.float2 div.col-sm-4').removeClass('col-sm-4').addClass('col-sm-5')
+				  	$('.float3 div.col-sm-4').removeClass('col-sm-4').addClass('col-sm-5')
+				  }
+				  else {
+				  	$('.float1 div.col-sm-5').removeClass('col-sm-5').addClass('col-sm-4')
+				  	$('.float2 div.col-sm-5').removeClass('col-sm-5').addClass('col-sm-4')
+				  	$('.float3 div.col-sm-5').removeClass('col-sm-5').addClass('col-sm-4')
+				  	
+				  }
+				});
+    			
+    		});
+
+    		$(document).on('click', '.backarrow_project', function(event) {
+				$('.page_three').animate({					
+					left : "-200%",
+    				right: "200%"    				
+				}, 1000);					
+					$('.backarrow_project').fadeOut(500);	
+					$('.float1, .float2, .float3').animate({
+						left: "-200%"
+					}, 500)	
+					$('.float4, .float5, .float6').animate({
+						right: "-200%"
+					}, 500)
+    			$('.page_one').animate({
+    				left: "0px"
+    			}, 1000);
+    		});
+
+    		$(document).on('click', '.btn3', function(event) {    			
+				$('.expert1').css('position', 'relative').animate({
+					top: "0"
+				}, 500);
+				$('.expert2').css('position', 'relative').animate({
+					bottom: "0"
+				}, 500);
+
+				$('.backarrow_expert').fadeIn(1000);
+			    			
+    		});
+
+    		$(document).on('click', '.backarrow_expert', function(event) {
+    			
+    			$('.expert1').animate({
+    				top: "-100%"
+    			}, 1000, function(){
+    				$('.expert1').css('position', 'absolute')
+    			});
+    			$('.expert2').animate({
+    				bottom: "-100%"
+    			}, 1000, function(){
+    				$('.expert2').css('position', 'absolute')
+    			});
+				$('.backarrow_expert').fadeOut(1000);
+
+    		});
+    	
+    	});
+
+    	function openVideoModal(getVideo){
+			var video = document.getElementsByTagName('video')[0];
+		    var sources = video.getElementsByTagName('source');
+    		
+    		if (getVideo == 'steganography') {
+			    sources[0].src = 'stegoGA2.mp4';
+    		}else if (getVideo == 'pacman') {
+			    sources[0].src = 'PacmanVideo.mp4';
+    		}else if (getVideo == 'compiler') {
+			    sources[0].src = 'compiler.mp4';
+    		}
+			
+				video.load();
+    	  	document.getElementById("videoModal").style.display = "block";
+    	}
+
+    	function openModal() {
+    	  document.getElementById("myModal").style.display = "block";
+    	}
+
+    	function closeModal() {
+    	  document.getElementById("myModal").style.display = "none";
+    	  document.getElementById("videoModal").style.display = "none";
+    	}
+
+    	var slideIndex = 1;
+    	showSlides(slideIndex);
+
+    	function plusSlides(n) {
+    	  showSlides(slideIndex += n);
+    	}
+
+    	function currentSlide(n) {
+    	  showSlides(slideIndex = n);
+    	}
+
+    	function showSlides(n) {
+    	  var i;
+    	  var slides = document.getElementsByClassName("mySlides");
+    	  var dots = document.getElementsByClassName("demo");
+    	  var captionText = document.getElementById("caption");
+    	  if (n > slides.length) {slideIndex = 1}
+    	  if (n < 1) {slideIndex = slides.length}
+    	  for (i = 0; i < slides.length; i++) {
+    	      slides[i].style.display = "none";
+    	  }
+    	  // for (i = 0; i < dots.length; i++) {
+    	  //     dots[i].className = dots[i].className.replace(" active", "");
+    	  // }
+    	  slides[slideIndex-1].style.display = "block";
+    	  // dots[slideIndex-1].className += " active";
+    	  // captionText.innerHTML = dots[slideIndex-1].alt;
+    	}
+    </script>
+</html>
